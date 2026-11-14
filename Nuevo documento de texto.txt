@@ -1,0 +1,4 @@
+todos tenian los saltos de linea en modo windows
+clase3: si grep no encontraba nada (errores en este caso) devolvia 1, pero pipefaill -e interpretaba el 1 como resultado de algun error en la cadena y cortaba el programa, por lo que hice que en tal caso en lugar de cor5tarse , haga un echo que informe que no hubieron errores.
+clase4: es segundo sed esperaba 4 cadenas de caracteres, pero el primer sed agrego una al principio, dejando 5 y causando que la ultima se pierda.
+clase5: xargs separaba los nombres de archivo en los espacios y fallaba con las comillas, cortando el procesamiento sin avisar. Agregué -print0 al find, que separa los nombres con el carácter NUL en vez de con saltos de línea, y -0 al xargs, que hace que corte solo en NUL y no interprete las comillas.
